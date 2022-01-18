@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset=" UTF-8">
+        <meta http-equiv = "X-UA-Compatible" content="IE=edge">
+        <meta name = "viewport" content="width=device-width, initila-scale= 1.0">
+        <title> Document
+        </title>
+        <style>
+            .gallery{
+                width: 100px;height: 100px;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>
+            Understanding new features of Javascript
+        </h1>
+        <script type="text/Javascript">
+            function test() {
+                for (var x = 0; x < 2; x++) {
+                    var y=30;
+                    const pi=3.14;
+                    let z=45+x;
+                    console.log('y = '+y);
+                    console.log('z=' + z);
+                    console.log('pi =' +pi);
+
+                    
+                }
+               
+                //console.log('pi '+pi+ 'z= ' +z+ 'y' +y);
+            }
+            test();
+            function Employee(name , age) {
+                this.name=name;
+                this.age = age;
+
+                
+            }
+            Employee.prototype.display =function () {
+                document.write('<p> name : '+ this.name + 'age : '+ this.age+'</p');
+
+                
+            } 
+            var e =new Employee('alex', 30);
+            e.display();
+
+            class  EmployeeWithConstructor {
+                constructor(name,age){
+                    this.name=name;
+                this.age = age;
+                }
+                 display1(){
+                document.write('<p> name : '+ this.name + 'age : '+ this.age+'</p');
+                }
+            }
+            class Manager extends EmployeeWithConstructor{
+                constructor(name,age, employeeReporting){
+                    super(name,age);
+                    this.employeeReporting =employeeReporting;
+
+                }
+                display2(){
+                    document.write('<p> Name : ' + this.name+ 'Age : '+ this.age + 'Reporting : '+this.employeeReporting+'</p>');
+
+                }
+            }
+            var e = new Manager('Alexander',35,8);
+            e.display2();
+
+                
+
+            
+            var e =new EmployeeWithConstructor('Arun', 35);
+            e.display1();
+        </script>
+    </body>

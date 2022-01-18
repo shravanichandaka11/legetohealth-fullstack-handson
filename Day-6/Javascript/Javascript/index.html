@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset=" UTF-8">
+        <meta http-equiv = "X-UA-Compatible" content="IE=edge">
+        <meta name = "viewport" content="width=device-width, initila-scale= 1.0">
+        <title> Document
+        </title>
+        <style>
+            .garalley{
+                width: 100px;height: 100px;
+            }
+        </style>
+    </head>
+    <body>
+        <h1 id='i1' style ='color: blueviolet'> Welcome to Javascript</h1>
+        <img src='images/image1.jfif' id="mainimage" width ="300" height="300"/>
+        <hr/>
+        <div onclick="handleClickEvent(event)">
+            <img src= 'images/image2.jpeg' class="gallery"/>
+            <img src= 'images/image3.jpg' class="gallery"/>
+
+
+        </div>
+        <script type = 'text/Javascript'>
+            var count =0;
+                function handleClickEvent(event) {
+                    if(count>2){
+                        count=0;
+                    }
+                    var colors = {"red","green"};
+                    var x= document.getElementById('i1')
+                   x.style.color =colors[count++];
+                   var ele =document.getElementById('mainimage');
+                   if(event.target.tagName =='IMG'){
+                       ele.src = event.target.src;
+
+                   }
+                }
+                
+        
+        </script>
+
+    </body>
+</html>
