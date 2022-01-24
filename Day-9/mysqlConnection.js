@@ -1,6 +1,8 @@
 let app= require("express")();
 let mysql = require('mysql');
 //let mySqlUrl= "sqldb://localhost:mysql";
+
+let bodyparser = require('body-parser');
 let con = mysql.createConnection({
     host:"localhost", user:"root",password:"root",
     database: "myEmployeeDb"
@@ -10,9 +12,14 @@ let port = 9090;
 app.listen(port, () => console.log(`Node server running in ${port}`));
 app.get('/employee', (request, response) => {
  con.connect((err)=>{
-    if(!err){
-         console.log("connected");
-    }
+     let id = parseInt(request.params.id);
+     con.query("SELECT * FROM myEmployeeDb",function(err,result){
+         if(err) throw err;
+         console.log(result);
+         response.json(result);
+     });
+   
+    });
    /* con.query("CREATE DATABASE myEmployeeDb", function(err,result)
     {
         if(err){
@@ -57,5 +64,5 @@ con.query(sql,function(err,result){
     console.log(result.affectedRows + " record updated");
 });*/
  }); 
-}); 
+
     

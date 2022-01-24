@@ -4,6 +4,7 @@
         <meta charset=" UTF-8">
         <meta http-equiv = "X-UA-Compatible" content="IE=edge">
         <meta name = "viewport" content="width=device-width, initila-scale= 1.0">
+        
         <title> Document
         </title>
         <style>
@@ -16,24 +17,25 @@
         <div id = 'root'></div> 
         <script crossorigin src="https://unpkg.com/react@17/umd/react.development.js"></script>
         <script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+        <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
         <script type = 'text/Babel'>
-                fucntion clock(){
+                fucntion Clock(){
                     let date = new Date();
                     return(<div>
                         <h1> this is demo component </h1>
                         <p> Hello {date.toLocaleTimeString()} Timer</p>
                         </div>);
                 }
-                fucntion app(){
+                fucntion App(){
                     return(<div>
                         <h1> Welcome to app component</h1>
-                        <clock/>
+                        <Clock/>
                       </div  );
                 }
-                fucntion tick(){
-                    ReactDOM.render(<app/>,document.getElementById('root'));
+                fucntion Tick(){
+                    ReactDOM.render(<App/>,document.getElementById('root'));
                 }
-                setInterval(tick, 1000);
+                setInterval(tick, 2000);
         </script>
     </body>
 </html>
