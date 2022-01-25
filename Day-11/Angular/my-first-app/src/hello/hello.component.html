@@ -1,0 +1,19 @@
+
+<div>
+    <p>hello works!</p>
+    <p> Name: {{name|uppercase}}</p>
+    <p> Salary: {{sal| currency}}</p>
+    <p> Date of Birth: {{ dob| date: "mm-dd-yyyy"}}</p>
+    <p> Date of Birth: {{ dob| date}}</p>
+    <div>
+        <p *ngfor = 'status'> Status: {{status}}</p>
+        <div>
+            <p *ngFor="let f of fruits">{{f}}</p>
+            <ol>
+                <li *ngFor="let f of fruits">
+                    {{f}}
+                </li>
+            </ol>
+        </div>
+    </div>
+</div>
