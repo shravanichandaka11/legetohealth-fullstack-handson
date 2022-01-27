@@ -1,0 +1,12 @@
+
+<p>parent works!</p>
+<div>
+    <app-child [username] = 'firstName'></app-child>
+</div>
+<h2> Iterating the child</h2>
+<div *ngFor = 'let u of users'>
+    <app-child [username] = 'u'></app-child>
+
+</div>
+ 
+
