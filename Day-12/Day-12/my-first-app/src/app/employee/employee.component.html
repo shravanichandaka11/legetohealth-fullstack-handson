@@ -1,0 +1,28 @@
+
+<div>
+    <p>employee works!</p>
+    <div>
+        <button class="btn btn-primary"  type="button">Add</button>
+        <button class="btn btn-secondary" type="button">Delete</button>
+        <button class="btn btn-success" type="button">View</button>
+    </div>
+        
+        <table class= 'table table-striped'>
+            <thead>
+                <tr>
+                    <th scope ="col">Id</th> 
+                     <th scope ='col'>Name   </th> 
+                     <th scope ='col'>Salary</th>
+                </tr>
+            </thead>
+            <tbody>
+               
+                <tr *ngFor=" let e of employees">
+                    <td>{{e.id}}</td><td>{{e.name}}</td><td>{{e.sal}}</td>
+                  
+                </tr>
+           
+            </tbody>
+        </table>
+   
+</div>

@@ -1,0 +1,13 @@
+<div>
+
+  <app-data-bind></app-data-bind>
+<app-parent></app-parent>
+</div>
+<div>
+  <p> Custom Pipe</p>
+  <h2> Iterating users using custom pipe</h2>
+  <div *ngfor =" let u of users">
+    Name: {{u.name| genderFormat: u.gender}},Gender: {{u.gender}}
+
+  </div>
+</div>

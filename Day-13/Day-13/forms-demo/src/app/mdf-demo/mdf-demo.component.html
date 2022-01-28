@@ -1,0 +1,22 @@
+<div>
+    <h3>MDF Demo!!</h3>
+    <form [formGroup]= "profile" (ngSubmit)="handleSubmit()">
+        <div class ='row'>
+            <div class='col-5'>
+
+            </div>
+        </div>
+        <div>
+            FirstName: <input type='text' formControlName ='firstName'/>
+
+        </div>
+        <div>
+            LastName: <input type='text' formControlName ='lastName'/>
+            
+        </div>
+        <div>
+            <input  type="submit" value="Submit"/>
+        </div>
+    </form>
+    <div> {{profile.value| json}}</div>
+</div>>

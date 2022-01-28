@@ -5,7 +5,7 @@
 </div>
 <h2> Iterating the child</h2>
 <div *ngFor = 'let u of users'>
-    <app-child [username] = 'u'></app-child>
+    <app-child [username] = 'u' (eventCounter)= "numberOfClicks($event)"></app-child>
 
 </div>
  
