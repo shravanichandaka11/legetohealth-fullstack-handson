@@ -20,6 +20,12 @@ app.get('/employee', (request, response) => {
      });
    
     });
+    
+    
+    
+
+
+
    /* con.query("CREATE DATABASE myEmployeeDb", function(err,result)
     {
         if(err){

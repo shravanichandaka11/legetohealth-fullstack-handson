@@ -51,4 +51,29 @@ app.get('/employee/:id', (request, response) => {
         } // if ends
     });// connect ends
 });// get() ends
+app.delete('/employee/:id',(request,response)=>{
+    let id = parseInt(request.params.id);
+    console.log(`id is ${id}`)
+    connection.query(`delete from employee where id=${id}`,function (err, result) {
+        if (err) throw err;
+        console.log(result);
+        response.json(result);
+      });
+});
 
+app.post('/employee',(request,response)=>{
+    console.log(request.body);
+   
+    let requestBody = request.body;
+    
+    let name = requestBody['name'];
+    let salary = requestBody['salary'];
+    console.log(`name = ${name} and salary = ${salary}`);
+    connection.query(`INSERT INTO employee (name,salary)VALUES('${name}','${salary}')`,function (err, result) {
+        if (err) throw err;
+        console.log(result);
+        response.json(result);
+      });
+    
+});
+app.listen(port, ()=> console.log(`listining to ${port}`));
