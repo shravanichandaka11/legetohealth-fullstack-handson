@@ -6,6 +6,7 @@ app.listen(port, () => console.log(`Node server running in ${port}`));
 // retriving all the records
 app.get('/employee', (request, response) => {
     mysql.connect(dbURL, {useNewUrlParser : true}, (err, client) => {
+        console.log("connected to sql db");
         if(!err) {
             let myDB = client.db('mydb');
             let doc = myDB.collection("employee").find();

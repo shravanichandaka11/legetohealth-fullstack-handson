@@ -1,0 +1,29 @@
+<div>
+     
+    <table *ngIf = "employees" class = 'table'>
+        <thead class='thead-dark'>
+            <tr>
+                <th>
+                    Id
+                </th>
+                <th>
+                    Name
+                </th>
+                <th>
+                    Age
+                 </th>
+            </tr>
+           
+        </thead>
+        <tbody>
+            <tr scope ='row' *ngFor=" let e of employees"> 
+                <td>{{e.id}}</td>
+                <td>{{e.name}}</td>
+                <td>{{e.age}}</td>
+            </tr>
+        </tbody>
+        
+    </table>
+
+    
+</div>
